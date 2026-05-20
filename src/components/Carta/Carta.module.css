@@ -1,0 +1,29 @@
+.section {
+  padding: var(--pad-y) var(--pad-x);
+  background: var(--bg-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px; }
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--line-2);
+  background: transparent;
+  color: var(--ink-mut);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: border-color .2s, background .2s, color .2s;
+}
+.pill:hover {
+  border-color: var(--lime);
+  background: rgba(200,255,61,.06);
+  color: var(--ink);
+}
+.pillIcon { font-size: 16px; }

@@ -1,0 +1,27 @@
+:root {
+  --bg:          #0a0a0b;
+  --bg-2:        #111114;
+  --bg-3:        #16161a;
+  --line:        rgba(255,255,255,.08);
+  --line-2:      rgba(255,255,255,.14);
+  --ink:         #f5f5f3;
+  --ink-mut:     #a7a7a3;
+  --ink-dim:     #6c6c68;
+  --lime:        #c8ff3d;
+  --lime-soft:   #e6ff8a;
+  --violet:      #6b5bff;
+  --violet-soft: #9d92ff;
+  --warn:        #ff7a59;
+
+  --font-display: 'Bricolage Grotesque', ui-serif, Georgia, serif;
+  --font-body:    'Manrope', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+
+  --r-card: 14px;
+  --r-sm:   8px;
+  --r-pill: 999px;
+
+  --max-w:  1240px;
+  --pad-x:  clamp(20px, 4vw, 56px);
+  --pad-y:  clamp(70px, 9vw, 130px);
+}

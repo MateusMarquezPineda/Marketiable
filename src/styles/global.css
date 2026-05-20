@@ -1,0 +1,128 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 64px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* grain overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: .07;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ── Utils ───────────────────────────────────── */
+.wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.accent {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--lime);
+}
+
+/* ── Reveal animation ────────────────────────── */
+.r {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+.r.on { opacity: 1; transform: none; }
+.r.d1 { transition-delay: .1s; }
+.r.d2 { transition-delay: .2s; }
+.r.d3 { transition-delay: .3s; }
+
+/* ── Buttons ─────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: var(--r-pill);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+  white-space: nowrap;
+}
+.btn:hover { transform: translateY(-2px); }
+
+.btn-lime {
+  background: var(--lime);
+  color: #0a0a0b;
+  box-shadow: 0 0 28px rgba(200,255,61,.22);
+}
+.btn-lime:hover { box-shadow: 0 0 44px rgba(200,255,61,.38); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line-2);
+}
+.btn-ghost:hover {
+  border-color: rgba(255,255,255,.28);
+  background: rgba(255,255,255,.04);
+}
+
+.btn-wa {
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 0 28px rgba(37,211,102,.22);
+}
+.btn-wa:hover { box-shadow: 0 0 44px rgba(37,211,102,.38); }
+
+/* ── Section header ──────────────────────────── */
+.sh { margin-bottom: clamp(40px, 5vw, 64px); }
+.sh h2 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5.5vw, 72px);
+  font-weight: 800;
+  letter-spacing: -.03em;
+  line-height: 1.04;
+  color: var(--ink);
+  margin-top: 10px;
+}
+.sh p {
+  color: var(--ink-mut);
+  font-size: clamp(15px, 1.8vw, 17px);
+  max-width: 500px;
+  margin-top: 14px;
+  line-height: 1.7;
+}
+
+/* ── Blob ────────────────────────────────────── */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}

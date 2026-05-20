@@ -1,0 +1,77 @@
+.section { padding: var(--pad-y) var(--pad-x); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  overflow: hidden;
+}
+
+.card {
+  padding: 32px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+  transition: background .25s;
+  cursor: default;
+}
+.card:nth-child(3n)  { border-right: none; }
+.card:nth-child(n+4) { border-bottom: none; }
+.card:hover { background: var(--bg-2); }
+
+.glow {
+  position: absolute;
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,255,61,.14) 0%, transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%,-50%);
+  opacity: 0;
+  transition: opacity .3s;
+}
+.card:hover .glow { opacity: 1; }
+
+.cardN {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .1em;
+  color: var(--lime);
+  margin-bottom: 14px;
+}
+.cardIco { font-size: 30px; display: block; margin-bottom: 14px; }
+.card h3 {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 9px;
+  line-height: 1.2;
+}
+.card p { font-size: 13.5px; color: var(--ink-mut); line-height: 1.65; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+.tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--line-2);
+  color: var(--ink-dim);
+}
+
+@media (max-width: 860px) {
+  .grid { grid-template-columns: repeat(2,1fr); }
+  .card:nth-child(3n)  { border-right: 1px solid var(--line); }
+  .card:nth-child(2n)  { border-right: none; }
+  .card:nth-child(n+4) { border-bottom: 1px solid var(--line); }
+  .card:nth-child(n+5) { border-bottom: none; }
+}
+@media (max-width: 520px) {
+  .grid { grid-template-columns: 1fr; }
+  .card { border-right: none !important; border-bottom: 1px solid var(--line) !important; }
+  .card:last-child { border-bottom: none !important; }
+}

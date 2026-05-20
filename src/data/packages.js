@@ -1,0 +1,57 @@
+import { waLink } from './config'
+
+export const packages = [
+  {
+    id: 'presencia',
+    n: 'PKG / 01',
+    name: 'Presencia Digital',
+    ideal: 'Para emprendedores, negocios físicos y profesionales que quieren verse profesionales y empezar a captar clientes.',
+    features: [
+      'Página web profesional responsive',
+      'Botón de WhatsApp integrado',
+      'Formulario de contacto',
+      'SEO básico inicial',
+      'Google Analytics + Search Console',
+      'Configuración básica de medición',
+    ],
+    cta: { label: 'Cotizar mi página web', href: waLink('Hola, quiero cotizar mi página web'), variant: 'ghost' },
+    hot: false,
+  },
+  {
+    id: 'ventas',
+    n: 'PKG / 02',
+    name: 'Ventas Online',
+    badge: '★ Más popular',
+    ideal: 'Para tiendas online, marcas de productos y negocios que harán pauta digital y quieren vender por internet.',
+    features: [
+      'Ecommerce o landing page de venta',
+      'Configuración de productos/servicios',
+      'WhatsApp + formularios de captación',
+      'Optimización para conversión',
+      'Meta Pixel + Google Tag Manager',
+      'Analytics + Clarity con mapa de calor',
+      'Preparación para campañas publicitarias',
+    ],
+    cta: { label: 'Quiero vender por internet', href: waLink('Hola, quiero vender por internet'), variant: 'lime' },
+    hot: true,
+  },
+  {
+    id: 'escalamiento',
+    n: 'PKG / 03',
+    name: 'Escalamiento Premium',
+    ideal: 'Para empresas, ecommerce y marcas con pauta activa que ya venden y quieren crecer con sistema.',
+    features: [
+      'Web o ecommerce optimizado',
+      'Chatbot WhatsApp Business',
+      'Automatización de ventas y citas',
+      'SEO mensual con reportes',
+      'Campañas Meta Ads / Google Ads',
+      'Dashboard de seguimiento',
+      'Reportes mensuales',
+      'Clarity y analítica avanzada',
+      'Optimización continua',
+    ],
+    cta: { label: 'Quiero escalar mi negocio', href: waLink('Hola, quiero escalar mi negocio'), variant: 'ghost' },
+    hot: false,
+  },
+]

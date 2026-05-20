@@ -1,0 +1,40 @@
+.wrap {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-2);
+  padding: 13px 0;
+  user-select: none;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: roll 32s linear infinite;
+}
+.track:hover { animation-play-state: paused; }
+
+@keyframes roll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.tick {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 28px;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--lime);
+  flex-shrink: 0;
+}

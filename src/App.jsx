@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Nav        from './components/Nav/Nav'
 import Hero       from './components/Hero/Hero'
 import Ticker     from './components/Ticker/Ticker'
@@ -13,6 +14,17 @@ import Footer     from './components/Footer/Footer'
 import WaFloat    from './components/ui/WaFloat/WaFloat'
 
 export default function App() {
+  useEffect(() => {
+    const obs = new IntersectionObserver(
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target) }
+      }),
+      { threshold: 0.1 }
+    )
+    document.querySelectorAll('.r').forEach(el => obs.observe(el))
+    return () => obs.disconnect()
+  }, [])
+
   return (
     <>
       <Nav />
